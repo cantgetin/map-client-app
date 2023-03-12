@@ -1,19 +1,15 @@
-import Map from "./components/Map/Map";
 import React from "react";
-import Layers from "./components/Layers/Layers";
-import BaseTileLayer from "./components/Layers/BaseTileLayer";
-import {BaseLayerType} from "./types/types";
+import {Route, Routes} from "react-router";
+import Home from "./pages/Home";
+import Map from "./pages/Map"
 
 function App() {
 
   return (
-    <div className="App">
-      <Map centerX={3} centerY={2} zoom={2}>
-          <Layers>
-              <BaseTileLayer type={BaseLayerType.OSM}/>
-          </Layers>
-      </Map>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/map/:id" element={<Map/>} />
+      </Routes>
   )
 }
 
