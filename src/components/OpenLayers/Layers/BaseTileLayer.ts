@@ -2,7 +2,7 @@ import {useContext, useEffect} from "react";
 import MapContext from "../Map/MapContext";
 import OLTileLayer from "ol/layer/Tile";
 import {BingMaps, OSM} from "ol/source";
-import {BaseLayerType} from "../../types/types";
+import {BaseLayerType} from "../../../types/types";
 
 type Props = {
     type: BaseLayerType

@@ -1,16 +1,33 @@
-import React from 'react';
-import OlMap from "../components/Map/Map";
-import Layers from "../components/Layers/Layers";
-import BaseTileLayer from "../components/Layers/BaseTileLayer";
-import {BaseLayerType} from "../types/types";
+import React, {useEffect, useState} from 'react';
+import OlMap from "../components/OpenLayers/Map/Map";
+import Layers from "../components/OpenLayers/Layers/Layers";
+import BaseTileLayer from "../components/OpenLayers/Layers/BaseTileLayer";
+import {useParams} from "react-router";
+import VectorLayerGroup from "../components/OpenLayers/Layers/VectorLayerGroup";
+import sampleMapData from "../../sample-map-data.json"
+import {BaseLayerType, MapData} from '../types/types'
 
 const Map = () => {
+
+    const {id} = useParams<{ id: string }>();
+    const [map, setMap] = useState<MapData>()
+
+    useEffect(() => {
+        if (!id) return
+
+        setMap(sampleMapData.maps[Number(id)-1])
+        console.log(sampleMapData.maps[Number(id)-1])
+    }, [id])
+
     return (
-        <OlMap centerX={61.384235} centerY={55.138498} zoom={7}>
+        map ?
+        <OlMap centerX={map.centerX} centerY={map.centerY} zoom={map.zoom}>
             <Layers>
                 <BaseTileLayer type={BaseLayerType.OSM}/>
+                <VectorLayerGroup layers={map.wfsLayers}/>
             </Layers>
         </OlMap>
+            : null
     );
 };
 
