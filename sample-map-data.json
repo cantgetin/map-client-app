@@ -1,0 +1,49 @@
+{
+  "maps": [
+    {
+      "id": 1,
+      "name": "Map 1",
+      "centerX": -55.454187,
+      "centerY": -33.662853,
+      "zoom": 5,
+      "wfsLayers": [
+        {
+          "id": 0,
+          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=ne:ne_10m_populated_places&outputFormat=application/json",
+          "name": "Populated places",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Map 2",
+      "centerX": -109.630144,
+      "centerY": 44.140642,
+      "zoom": 4,
+      "wfsLayers": [
+        {
+          "id": 0,
+          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=ne:ne_10m_roads&outputFormat=application/json",
+          "name": "Roads",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Map 3",
+      "centerX": -88.170836,
+      "centerY": 34.657851,
+      "zoom": 5,
+      "wfsLayers": [
+        {
+          "id": 0,
+          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=topp:states&outputFormat=application/json",
+          "name": "USA States",
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
