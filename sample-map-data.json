@@ -9,7 +9,7 @@
       "wfsLayers": [
         {
           "id": 0,
-          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=ne:ne_10m_populated_places&outputFormat=application/json",
+          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=ne:ne_10m_populated_places&outputFormat=application/json&count=5",
           "name": "Populated places",
           "visible": true
         }
@@ -24,7 +24,7 @@
       "wfsLayers": [
         {
           "id": 0,
-          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=ne:ne_10m_roads&outputFormat=application/json",
+          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=ne:ne_10m_roads&outputFormat=application/json&count=5",
           "name": "Roads",
           "visible": true
         }
@@ -39,7 +39,7 @@
       "wfsLayers": [
         {
           "id": 0,
-          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=topp:states&outputFormat=application/json",
+          "sourceUrl": "https://ahocevar.com/geoserver/wfs?service=WFS&%27version=1.1.0&request=GetFeature&typename=topp:states&outputFormat=application/json&count=1",
           "name": "USA States",
           "visible": true
         }

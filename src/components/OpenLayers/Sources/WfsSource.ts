@@ -6,7 +6,7 @@ const WfsSource = (url: string, maxFeatures: number) => {
 
     return new VectorSource({
         format: new GeoJSON(),
-        url: `${url}&count=${maxFeatures}`,
+        url: url,
         strategy: bboxStrategy,
     });
 }
