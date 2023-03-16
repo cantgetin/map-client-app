@@ -41,7 +41,7 @@ const BaseTileLayer = ({type, zIndex = 0}: Props) => {
                 map.removeLayer(baseTileLayer);
             }
         };
-    }, [map]);
+    }, [type, map]);
 
     return null;
 };

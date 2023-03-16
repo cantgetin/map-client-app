@@ -1,0 +1,23 @@
+.header {
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(3px);
+    width: 100vw;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: black;
+    flex-wrap: wrap;
+
+    a {
+        margin: 10px;
+        color: black;
+    }
+
+    .header_menu {
+        display: flex;
+        gap: 10px;
+        margin: 10px;
+    }
+}

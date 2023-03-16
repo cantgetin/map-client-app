@@ -6,27 +6,33 @@ import {useParams} from "react-router";
 import VectorLayerGroup from "../components/OpenLayers/Layers/VectorLayerGroup";
 import sampleMapData from "../../sample-map-data.json"
 import {BaseLayerType, MapData} from '../types/types'
+import Header from "../components/UI/Header";
+import {useAppDispatch, useAppSelector} from "../store/hooks";
+import {selectMap, setMap} from "../store/slices/mapSlice";
 
 const Map = () => {
 
     const {id} = useParams<{ id: string }>();
-    const [map, setMap] = useState<MapData>()
+
+    const dispatch = useAppDispatch();
+    const map = useAppSelector(selectMap);
 
     useEffect(() => {
         if (!id) return
-
-        setMap(sampleMapData.maps[Number(id)-1])
-        console.log(sampleMapData.maps[Number(id)-1])
+        dispatch(setMap(sampleMapData.maps[Number(id)-1]))
     }, [id])
 
     return (
         map ?
-        <OlMap centerX={map.centerX} centerY={map.centerY} zoom={map.zoom}>
-            <Layers>
-                <BaseTileLayer type={BaseLayerType.OSM}/>
-                <VectorLayerGroup layers={map.wfsLayers}/>
-            </Layers>
-        </OlMap>
+            <>
+                <Header/>
+                <OlMap centerX={map.centerX} centerY={map.centerY} zoom={map.zoom}>
+                    <Layers>
+                        <BaseTileLayer type={map.baseLayer}/>
+                        <VectorLayerGroup layers={map.wfsLayers}/>
+                    </Layers>
+                </OlMap>
+            </>
             : null
     );
 };

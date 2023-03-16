@@ -2,10 +2,11 @@
   "maps": [
     {
       "id": 1,
-      "name": "Map 1",
+      "name": "Populated places",
       "centerX": -55.454187,
       "centerY": -33.662853,
       "zoom": 5,
+      "baseLayer": "OSM",
       "wfsLayers": [
         {
           "id": 0,
@@ -17,10 +18,11 @@
     },
     {
       "id": 2,
-      "name": "Map 2",
+      "name": "Roads",
       "centerX": -109.630144,
       "centerY": 44.140642,
       "zoom": 4,
+      "baseLayer": "Bing",
       "wfsLayers": [
         {
           "id": 0,
@@ -32,10 +34,11 @@
     },
     {
       "id": 3,
-      "name": "Map 3",
+      "name": "USA States",
       "centerX": -88.170836,
       "centerY": 34.657851,
       "zoom": 5,
+      "baseLayer": "Bing",
       "wfsLayers": [
         {
           "id": 0,

@@ -10,13 +10,12 @@ export interface Layer {
     name: string,
     visible: boolean
 }
-
-// TODO: add baseLayer enum to json, parse it
 export interface MapData {
     id: number,
     name: string,
     centerX: number,
     centerY: number,
     zoom: number,
+    baseLayer: BaseLayerType,
     wfsLayers: Layer[]
 }
