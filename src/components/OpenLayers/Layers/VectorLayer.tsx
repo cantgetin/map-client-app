@@ -12,7 +12,7 @@ type Props = {
     zIndex: number
 }
 
-const VectorLayer = ({sourceUrl, name, style = null, zIndex = 0}: Props) => {
+const VectorLayer = ({sourceUrl, name, style = null, zIndex = 10}: Props) => {
     const map = useContext(MapContext);
 
     const universalStyles = new Style({

@@ -12,7 +12,7 @@ const VectorLayerGroup = ({layers}: Props) => {
             {layers.map(layer =>
                 layer.visible
                     ?
-                    <VectorLayer sourceUrl={layer.sourceUrl} name={layer.name} key={layer.id} style={null} zIndex={0}/>
+                    <VectorLayer sourceUrl={layer.sourceUrl} name={layer.name} key={layer.id} style={null} zIndex={10}/>
                     : null)}
         </>
     );

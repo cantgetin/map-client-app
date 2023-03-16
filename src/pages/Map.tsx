@@ -5,7 +5,6 @@ import BaseTileLayer from "../components/OpenLayers/Layers/BaseTileLayer";
 import {useParams} from "react-router";
 import VectorLayerGroup from "../components/OpenLayers/Layers/VectorLayerGroup";
 import sampleMapData from "../../sample-map-data.json"
-import {BaseLayerType, MapData} from '../types/types'
 import Header from "../components/UI/Header";
 import {useAppDispatch, useAppSelector} from "../store/hooks";
 import {selectMap, setMap} from "../store/slices/mapSlice";
