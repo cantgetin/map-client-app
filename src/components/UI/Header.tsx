@@ -31,7 +31,7 @@ const Header = () => {
                 <select onChange={event => dispatch(changeBaseLayer(event.target.value))} value={map.baseLayer}>
                     {
                         (Object.keys(BaseLayerType) as Array<enumKey>).map((key) =>
-                            <option>{key}</option>
+                            <option key={key}>{key}</option>
                         )
                     }
                 </select>
