@@ -8,6 +8,7 @@ import sampleMapData from "../../sample-map-data.json"
 import Header from "../components/UI/Header";
 import {useAppDispatch, useAppSelector} from "../store/hooks";
 import {selectMap, setMap} from "../store/slices/mapSlice";
+import Popover from "../components/UI/Popover";
 
 const Map = () => {
 
@@ -26,6 +27,7 @@ const Map = () => {
             <>
                 <Header/>
                 <OlMap centerX={map.centerX} centerY={map.centerY} zoom={map.zoom}>
+                    <Popover/>
                     <Layers>
                         <BaseTileLayer type={map.baseLayer}/>
                         <VectorLayerGroup layers={map.wfsLayers}/>
