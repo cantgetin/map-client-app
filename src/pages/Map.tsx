@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import OlMap from "../components/OpenLayers/Map/Map";
-import Layers from "../components/OpenLayers/Layers/Layers";
-import BaseTileLayer from "../components/OpenLayers/Layers/BaseTileLayer";
+import {Layers, BaseTileLayer, VectorLayerGroup} from "../components/OpenLayers/Layers";
 import {useParams} from "react-router";
-import VectorLayerGroup from "../components/OpenLayers/Layers/VectorLayerGroup";
 import sampleMapData from "../../sample-map-data.json"
 import Header from "../components/UI/Header";
 import {useAppDispatch, useAppSelector} from "../store/hooks";
 import {selectMap, setMap} from "../store/slices/mapSlice";
 import Popover from "../components/UI/Popover";
+import {Interactions, RotateInteraction} from "../components/OpenLayers/Interactions";
+import {Controls, FullScreenControl} from "../components/OpenLayers/Controls";
 
 const Map = () => {
 
@@ -32,6 +32,12 @@ const Map = () => {
                         <BaseTileLayer type={map.baseLayer}/>
                         <VectorLayerGroup layers={map.wfsLayers}/>
                     </Layers>
+                    <Controls>
+                        <FullScreenControl/>
+                    </Controls>
+                    <Interactions>
+                        <RotateInteraction/>
+                    </Interactions>
                 </OlMap>
             </>
             : null

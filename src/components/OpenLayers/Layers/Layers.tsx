@@ -1,7 +1,7 @@
 import React from "react";
 
 const Layers = ({ children }: any) => {
-    return <div>{children}</div>;
+    return <>{children}</>;
 };
 
 export default Layers;
