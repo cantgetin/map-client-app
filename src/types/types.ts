@@ -10,6 +10,9 @@ export interface Layer {
     name: string,
     visible: boolean
 }
+export interface WmsLayer extends Layer {
+    sourceLayerName: string,
+}
 export interface MapData {
     id: number,
     name: string,
@@ -17,5 +20,6 @@ export interface MapData {
     centerY: number,
     zoom: number,
     baseLayer: BaseLayerType,
-    wfsLayers: Layer[]
+    wfsLayers?: Layer[]
+    wmsLayers?: WmsLayer[]
 }

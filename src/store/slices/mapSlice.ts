@@ -9,10 +9,11 @@ const initialState = <MapData>{
     centerY: 0,
     zoom: 0,
     wfsLayers: [],
+    wmsLayer: [],
     baseLayer: BaseLayerType.None
 }
 
-const layerTypeMap = new Map<string,BaseLayerType>(Object.values(BaseLayerType).map((v) => [v,v]))
+const layerTypeMap = new Map<string, BaseLayerType>(Object.values(BaseLayerType).map((v) => [v, v]))
 
 function parseEnumString(text: string): BaseLayerType {
     if (layerTypeMap.get(text)) return layerTypeMap.get(text)!
@@ -25,14 +26,15 @@ const mapSlice = createSlice({
     reducers: {
         setMap(state, action) {
             state.id = action.payload.id,
-            state.name = action.payload.name,
-            state.centerX = action.payload.centerX,
-            state.centerY = action.payload.centerY,
-            state.zoom = action.payload.zoom,
-            state.wfsLayers = action.payload.wfsLayers,
-            state.baseLayer = parseEnumString(action.payload.baseLayer)
+                state.name = action.payload.name,
+                state.centerX = action.payload.centerX,
+                state.centerY = action.payload.centerY,
+                state.zoom = action.payload.zoom,
+                state.wfsLayers = action.payload.wfsLayers,
+                state.wmsLayers = action.payload.wmsLayers,
+                state.baseLayer = parseEnumString(action.payload.baseLayer)
         },
-        changeBaseLayer(state, action: {payload: string, type: any}){
+        changeBaseLayer(state, action: { payload: string, type: any }) {
             state.baseLayer = parseEnumString(action.payload)
         }
     }

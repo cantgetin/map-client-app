@@ -47,6 +47,23 @@
           "visible": true
         }
       ]
+    },
+    {
+      "id": 4,
+      "name": "USA States WMS",
+      "centerX": -88.170836,
+      "centerY": 34.657851,
+      "zoom": 5,
+      "baseLayer": "OSM",
+      "wmsLayers": [
+        {
+          "id": 0,
+          "sourceUrl": "https://ahocevar.com/geoserver/wms",
+          "sourceLayerName": "topp:states",
+          "name": "Top states",
+          "visible": true
+        }
+      ]
     }
   ]
 }
